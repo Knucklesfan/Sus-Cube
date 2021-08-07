@@ -351,14 +351,17 @@ function main() {
 window.onload = main;
 function startAnimation() {
     var audio = new Audio('airpodshotty.mp3');
-    audio.play();
-    animation = true;
-    document.getElementById("button").hidden = true;
+    audio.onload(new function () {
+        audio.play();
+        animation = true;
+        document.getElementById("button").hidden = true;
 
-    window.setInterval(function(){
-        visibility = 0.0;
-        document.getElementById("top").hidden = false;
-        document.getElementById("bottom").hidden = false;
-    }, 11000);
+        window.setInterval(function(){
+            visibility = 0.0;
+            document.getElementById("top").hidden = false;
+            document.getElementById("bottom").hidden = false;
+        }, 11000);
+
+    });
 
 }
