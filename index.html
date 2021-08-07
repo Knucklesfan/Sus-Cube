@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WHEN THE IMPOSTER IS CUBED</title>
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+            integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+            crossorigin="anonymous" defer>
+    </script>
+    <style>
+        body {
+            margin: 0; width: 100%; height: 100%; overflow: hidden
+
+        }
+        #canvasholder {
+            position: relative;
+        }
+        canvas {
+            position: absolute;
+            left: -9999px;
+            right: -9999px;
+            margin: auto;
+        }
+        #top {
+            position:absolute;
+            margin: auto;
+            text-align: center;
+
+            top: 0px;
+            width: 100%;
+            font-family: Impact;
+            font-size: 120px;
+            color: white;
+            -webkit-text-stroke: 8px black;
+        }
+        #button {
+            position:absolute;
+            margin: 0;
+            top: 50%;
+            right: 50%;
+            text-align: center;
+            transform: translate(50%, 50%);
+
+
+        }
+        #bottom {
+            position:absolute;
+            margin: auto;
+            text-align: center;
+            bottom: 0px;
+            width: 100%;
+            font-family: Impact;
+            font-size: 120px;
+            color: white;
+            -webkit-text-stroke: 8px black;
+
+        }
+        .demo{
+            width:400px;
+            height:400px;
+            font-size:5em;
+            float:left;
+            text-align:center;
+        }
+
+        .rainbow-bg{
+            animation: rainbow-bg 2.5s linear;
+            animation-iteration-count: infinite;
+            margin: 0; width: 100%; height: 100%; overflow: hidden
+
+        }
+
+        .rainbow{
+            animation: rainbow 2.5s linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes rainbow-bg{
+            100%,0%{
+                background-color: rgb(255,0,0);
+            }
+            8%{
+                background-color: rgb(255,127,0);
+            }
+            16%{
+                background-color: rgb(255,255,0);
+            }
+            25%{
+                background-color: rgb(127,255,0);
+            }
+            33%{
+                background-color: rgb(0,255,0);
+            }
+            41%{
+                background-color: rgb(0,255,127);
+            }
+            50%{
+                background-color: rgb(0,255,255);
+            }
+            58%{
+                background-color: rgb(0,127,255);
+            }
+            66%{
+                background-color: rgb(0,0,255);
+            }
+            75%{
+                background-color: rgb(127,0,255);
+            }
+            83%{
+                background-color: rgb(255,0,255);
+            }
+            91%{
+                background-color: rgb(255,0,127);
+            }
+        }
+
+        @keyframes rainbow{
+            100%,0%{
+                color: rgb(255,0,0);
+            }
+            8%{
+                color: rgb(255,127,0);
+            }
+            16%{
+                color: rgb(255,255,0);
+            }
+            25%{
+                color: rgb(127,255,0);
+            }
+            33%{
+                color: rgb(0,255,0);
+            }
+            41%{
+                color: rgb(0,255,127);
+            }
+            50%{
+                color: rgb(0,255,255);
+            }
+            58%{
+                color: rgb(0,127,255);
+            }
+            66%{
+                color: rgb(0,0,255);
+            }
+            75%{
+                color: rgb(127,0,255);
+            }
+            83%{
+                color: rgb(255,0,255);
+            }
+            91%{
+                color: rgb(255,0,127);
+            }
+        }
+    </style>
+</head>
+<body class="demo rainbow-bg">
+<audio id="my_audio" src="" loop="loop"></audio>
+
+    <div id="canvasholder">
+        <canvas id="canvas" width="1920" height="1080"></canvas>
+    </div>
+    <button id="button" onclick="startAnimation()">PUSH ME TO START THE NIGHTMARE</button>
+    <h1 id="top" hidden="true">GO AHEAD</h1>
+    <h1 id="bottom" hidden="true">CRY ABOUT IT</h1>
+
+</body>
+</html>
